@@ -1,7 +1,6 @@
-$primary-color: red;
-$secondary-color: white;
+@use 'basic';
 
-.container {
-  background-color: $primary-color;
-  color: $secondary-color;
+.header-sass {
+  background-color: basic.$third-color;
+  color: basic.$secondary-color;
 }
