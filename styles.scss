@@ -4,3 +4,29 @@
   background-color: basic.$third-color;
   color: basic.$secondary-color;
 }
+
+@mixin transform($property) {
+  -ms-transform: $property;
+  transform: $property;
+}
+
+.container {
+  @include transform(rotate(360deg));
+}
+
+%message-shared {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 5px;
+}
+
+%testing-ground {
+  // wont display because we didn't use it.
+  color: #f4f4f4;
+  background: #141414;
+}
+
+.box {
+  @extend %message-shared;
+}
