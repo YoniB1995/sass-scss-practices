@@ -5,9 +5,32 @@
   color: basic.$secondary-color;
 }
 
+@mixin flexCenter($direction, $height) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: $direction;
+  height: $height;
+}
+
+body {
+  @include flexCenter(column, 100vh);
+}
+
 @mixin transform($property) {
   -ms-transform: $property;
   transform: $property;
+}
+
+@mixin theme($light-theme: true) {
+  @if $light-theme == true {
+    background: lighten(basic.$primary-color, 100%);
+    color: darken(basic.$text-color, 100%);
+  }
+  @if $light-theme == false {
+    background: lighten(black, 100%);
+    color: darken(white, 100%);
+  }
 }
 
 .container {
@@ -29,4 +52,9 @@
 
 .box {
   @extend %message-shared;
+}
+
+// using if mixing operator
+.light {
+  @include theme($light-theme: false);
 }
