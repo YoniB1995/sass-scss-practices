@@ -33,4 +33,34 @@ body {
   color: black;
 }
 
+.container {
+  width: 100%;
+}
+
+article[role=main] {
+  float: left;
+  width: 62.5%;
+}
+
+aside[role=complementary] {
+  float: right;
+}
+
+.pending, .error, .success {
+  border: 1px solid #ccc;
+  color: black;
+}
+
+.success {
+  background: green;
+}
+
+.error {
+  background: red;
+}
+
+.pending {
+  background: blue;
+}
+
 /*# sourceMappingURL=styles.css.map */

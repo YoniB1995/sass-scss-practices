@@ -70,5 +70,22 @@ article[role="main"] {
 
 aside[role="complementary"] {
   float: right;
-  width: 300px / 960px * 100%;
+}
+
+%message-status {
+  border: 1px solid #ccc;
+  color: black;
+}
+
+.success {
+  @extend %message-status;
+  background: green;
+}
+.error {
+  @extend %message-status;
+  background: red;
+}
+.pending {
+  @extend %message-status;
+  background: blue;
 }
