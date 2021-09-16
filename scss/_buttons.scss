@@ -1,0 +1,19 @@
+%btn {
+  padding: 20px 8px;
+  border-radius: 10px;
+  border: 1px solid black;
+  &:hover {
+    transform: scale(0.98);
+    background: brown;
+    cursor: pointer;
+  }
+}
+
+.primary-btn {
+  @extend %btn;
+  background: cadetblue;
+}
+.secondary-btn {
+  @extend %btn;
+  background: blue;
+}

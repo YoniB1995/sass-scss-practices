@@ -1,0 +1,10 @@
+@mixin transform($property) {
+  -ms-transform: $property;
+  transform: $property;
+}
+
+.container {
+  @include transform(rotate(360deg));
+
+  width: 100%;
+}

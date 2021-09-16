@@ -1,8 +1,10 @@
-@use 'basic';
+@import "config";
+@import "utilties";
+@import "buttons";
 
 .header-sass {
-  background-color: basic.$third-color;
-  color: basic.$secondary-color;
+  background-color: $third-color;
+  color: $secondary-color;
 }
 
 @mixin flexCenter($direction, $height) {
@@ -17,24 +19,15 @@ body {
   @include flexCenter(column, 100vh);
 }
 
-@mixin transform($property) {
-  -ms-transform: $property;
-  transform: $property;
-}
-
 @mixin theme($light-theme: true) {
   @if $light-theme == true {
-    background: lighten(basic.$primary-color, 100%);
-    color: darken(basic.$text-color, 100%);
+    background: lighten($primary-color, 100%);
+    color: darken($text-color, 100%);
   }
   @if $light-theme == false {
     background: lighten(black, 100%);
     color: darken(white, 100%);
   }
-}
-
-.container {
-  @include transform(rotate(360deg));
 }
 
 %message-shared {
@@ -57,10 +50,6 @@ body {
 // using if mixing operator
 .light {
   @include theme($light-theme: false);
-}
-
-.container {
-  width: 100%;
 }
 
 article[role="main"] {

@@ -1,0 +1,28 @@
+$font-stack: Helvetica, san-serif;
+$third-color: blue;
+$primary-color: red;
+$secondary-color: white;
+$text-color: #141414;
+
+.container {
+  background-color: $primary-color;
+  color: $secondary-color;
+}
+
+//set text color if background color is similar
+@function set-text-color($color) {
+  @if (lightness($color) > 70) {
+    @return #333;
+  } @else {
+    @return #fff;
+  }
+}
+
+// Margin & Padding classes
+$spaceamounts: (1, 2, 3, 4, 5);
+
+@each $space in $spaceamounts {
+  .m-#{$space} {
+    margin: #{$space}rem;
+  }
+}
