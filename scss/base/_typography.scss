@@ -1,0 +1,12 @@
+$font-weights: (
+  "regular": 400,
+  "medium": 500,
+  "bold": 700,
+);
+
+.container {
+  @debug map($font-weights, "medium");
+}
+.main {
+  @debug map($font-weights, "extra-bold");
+}
